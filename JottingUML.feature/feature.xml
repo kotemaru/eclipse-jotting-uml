@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.kotemaru.eclipse.jottinguml"
+      label="JottingUML"
+      version="0.0.1"
+      provider-name="@kotemaru.org">
+
+   <description url="https://code.google.com/p/eclipse-jotting-uml/">
+      UML drawing tool of eclipse plugin.
+
+  * This is UML drawing tool of light weight and brief operation.
+  * This aims at the jotting tool which does not stop a thought.
+  * The save format assumes it SVG and can come in in same Javadoc.
+
+  * It still supports only a class diagram. (Ver-0.0.1)
+   </description>
+
+   <copyright url="http://www.apache.org/licenses/LICENSE-2.0.html">
+      Copyright 2013- @kotemaru.org
+   </copyright>
+
+   <license url="http://www.apache.org/licenses/LICENSE-2.0">
+      Apache license 2.0.
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.7.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gef" version="3.7.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.security" version="1.1.1" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.kotemaru.eclipse.jottinguml"
+         download-size="0"
+         install-size="0"
+         version="0.0.1"/>
+
+</feature>
