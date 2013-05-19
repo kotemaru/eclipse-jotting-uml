@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.kotemaru.eclipse.jottinguml_0.0.1.jar" id="org.kotemaru.eclipse.jottinguml" version="0.0.1">
+      <category name="org.kotemaru"/>
+   </feature>
+   <category-def name="org.kotemaru" label="KotemaruTools"/>
+</site>
