@@ -3,7 +3,10 @@
       id="org.kotemaru.eclipse.jottinguml"
       label="JottingUML"
       version="0.0.1"
-      provider-name="@kotemaru.org">
+      provider-name="@kotemaru.org"
+      plugin="org.kotemaru.eclipse.jottinguml"
+      exclusive="true"
+      colocation-affinity="org.kotemaru.eclipse.jottinguml">
 
    <description url="https://code.google.com/p/eclipse-jotting-uml/">
       UML drawing tool of eclipse plugin.
@@ -30,7 +33,6 @@
       <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.7.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gef" version="3.7.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.equinox.security" version="1.1.1" match="greaterOrEqual"/>
    </requires>
 
@@ -38,6 +40,6 @@
          id="org.kotemaru.eclipse.jottinguml"
          download-size="0"
          install-size="0"
-         version="0.0.1"/>
+         version="0.0.0"/>
 
 </feature>
