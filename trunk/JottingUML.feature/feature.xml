@@ -2,7 +2,7 @@
 <feature
       id="org.kotemaru.eclipse.jottinguml"
       label="JottingUML"
-      version="0.0.1"
+      version="0.0.1.qualifier"
       provider-name="@kotemaru.org"
       plugin="org.kotemaru.eclipse.jottinguml"
       exclusive="true"
