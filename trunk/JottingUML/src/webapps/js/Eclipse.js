@@ -56,11 +56,15 @@ function Eclipse(){};
 		window.status = null;
 	};
 	
+	var lastErrMsg = null;
 	window.onerror = function(err){
 		window.status = "error "+err+"\n"+err.stack;
 		window.status = null;
-		alert(""+err);
-		throw err;
+		if (err != lastErrMsg) {
+			alert(""+err);
+		}
+		lastErrMsg = err;
+		//throw err;
 	};
 	
 	Eclipse.log = function(msg){
