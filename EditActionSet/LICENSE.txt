@@ -1,0 +1,13 @@
+
+Source code:
+	Copyright 2013- @kotemaru.org
+	http://www.apache.org/licenses/LICENSE-2.0.html
+
+
+Icons:
+	Copyright 2009- led24.de
+	http://creativecommons.org/licenses/by-sa/3.0/
+	(see icons/led-icons-license.txt)
+
+--
+EOF
