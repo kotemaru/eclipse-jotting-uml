@@ -9,7 +9,7 @@ public class ActionContributor extends BasicTextEditorActionContributor {
 	@Override
 	public void setActiveEditor(IEditorPart part) {
 		IActionBars bars = getActionBars();
-		((BrowserEditor) part).doActivate(bars);
+		((AbstractBrowserEditor) part).doActivate(bars);
 		super.setActiveEditor(part);
 	}
 }

@@ -5,14 +5,24 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
 /**
- * The activator class controls the plug-in life cycle
+ * 基本、自動生成のまま。
+ * @author @kotemaru.org
  */
 public abstract class AbstractActivator extends AbstractUIPlugin {
 
 	// The shared instance
 	private static AbstractActivator plugin;
 	
+	/**
+	 * PluginIDを返す。通常はActivatorのフルクラス名。
+	 * @return
+	 */
 	public abstract String getPluginId();
+	
+	/**
+	 * Preference実装クラスを返す。
+	 * @return
+	 */
 	public abstract AbstractPreference getPreference();
 	
 

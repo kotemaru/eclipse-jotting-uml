@@ -12,8 +12,6 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.equinox.security.storage.EncodingUtils;
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.preference.IPersistentPreferenceStore;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.browser.StatusTextEvent;
@@ -25,10 +23,17 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IFileEditorInput;
 
+
+/**
+ * ブラウザ制御クラス。
+ * 
+ * @author inou
+ *
+ */
 public abstract class AbstractBrowserCtrl implements StatusTextListener {
 	private static final String ENCODING = "utf-8";
 
-	private BrowserEditor editor;
+	private AbstractBrowserEditor editor;
 	private Browser browser;
 	private boolean isReady = false;
 	
@@ -50,7 +55,7 @@ public abstract class AbstractBrowserCtrl implements StatusTextListener {
 	public abstract String getEditorUrl();
 
 	
-	public AbstractBrowserCtrl(BrowserEditor editor, Composite parent) {
+	public AbstractBrowserCtrl(AbstractBrowserEditor editor, Composite parent) {
 		this.editor = editor;
 		initBrowser(parent);
 		
