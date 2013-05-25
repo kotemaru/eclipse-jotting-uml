@@ -8,8 +8,14 @@
 			extensions="jul"
 			icon="icons/jul.png"
 			contributorClass="org.kotemaru.eclipse.browsereditor.ActionContributor"
-			class="org.kotemaru.eclipse.browsereditor.BrowserEditor"
-			id="org.kotemaru.eclipse.browsereditor.BrowserEditor">
+			class="org.kotemaru.eclipse.jottinguml.BrowserEditor"
+			id="org.kotemaru.eclipse.jottinguml.BrowserEditor">
+			
+			<preference name="fontFamily" type="String" default="arial,sans-serif" />
+			<wizard>
+				<desc>Generic Editor</deac>
+				<initData><![CDATA[init data]]></initData>
+			<wizard>
 		</editor>
 	</extension>
 

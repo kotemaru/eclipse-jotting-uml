@@ -1,6 +1,7 @@
 package org.kotemaru.eclipse.browsereditor;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
@@ -21,7 +22,7 @@ import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.ITextEditorActionConstants;
 
-public class BrowserEditor extends TextEditor {
+public abstract class AbstractBrowserEditor extends TextEditor {
 
 	private AbstractBrowserCtrl browserCtrl;
 
@@ -30,9 +31,12 @@ public class BrowserEditor extends TextEditor {
 	private Action redoAction   ;
 	private Action configAction ;
 	
-	public BrowserEditor() {
+	public AbstractBrowserEditor() {
 		super();
 	}
+	
+	public abstract AbstractBrowserCtrl createBrowserCtrl(AbstractBrowserEditor editor, Composite parent);
+
 	public AbstractBrowserCtrl getBrowserCtrl() {
 		return browserCtrl;
 	}
@@ -47,7 +51,7 @@ public class BrowserEditor extends TextEditor {
 	
 	@Override
 	public void createPartControl(Composite parent) {
-		browserCtrl = new AbstractBrowserCtrl(this, parent);
+		browserCtrl = createBrowserCtrl(this, parent);
 		printAction  = browserCtrl.getAction("print");
 		undoAction   = browserCtrl.getUndoAction();
 		redoAction   = browserCtrl.getRedoAction();
@@ -122,7 +126,7 @@ public class BrowserEditor extends TextEditor {
 		}
 	}
 
-	private void log(String msg) {
+	public void log(String msg) {
 		System.out.println(msg); // TODO:
 	}
 
