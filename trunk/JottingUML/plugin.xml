@@ -7,9 +7,9 @@
 			name="JottingUML"
 			extensions="jul"
 			icon="icons/jul.png"
-			contributorClass="org.kotemaru.eclipse.jottinguml.ActionContributor"
-			class="org.kotemaru.eclipse.jottinguml.BrowserEditor"
-			id="org.kotemaru.eclipse.jottinguml.editors.BrowserEditor">
+			contributorClass="org.kotemaru.eclipse.browsereditor.ActionContributor"
+			class="org.kotemaru.eclipse.browsereditor.BrowserEditor"
+			id="org.kotemaru.eclipse.browsereditor.BrowserEditor">
 		</editor>
 	</extension>
 
@@ -19,11 +19,11 @@
 	
 	<extension point="org.eclipse.ui.newWizards">
 		<wizard
-        category="JottingUML"
-        class="org.kotemaru.eclipse.jottinguml.NewWizard"
-        icon="icons/jul.png"
-        id="org.kotemaru.eclipse.jottinguml.NewWizaed"
-        name="JottingUML">
+			category="JottingUML"
+			class="org.kotemaru.eclipse.jottinguml.NewWizard"
+			icon="icons/jul.png"
+			id="org.kotemaru.eclipse.jottinguml.NewWizaed"
+			name="JottingUML">
 		</wizard>
 	</extension>
 

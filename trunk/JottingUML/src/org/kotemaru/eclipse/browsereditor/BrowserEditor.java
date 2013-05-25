@@ -1,4 +1,4 @@
-package org.kotemaru.eclipse.jottinguml;
+package org.kotemaru.eclipse.browsereditor;
 
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.core.resources.IFile;
@@ -23,7 +23,7 @@ import org.eclipse.ui.texteditor.ITextEditorActionConstants;
 
 public class BrowserEditor extends TextEditor {
 
-	private BrowserCtrl browserCtrl;
+	private AbstractBrowserCtrl browserCtrl;
 
 	private Action printAction  ;
 	private Action undoAction   ;
@@ -33,7 +33,7 @@ public class BrowserEditor extends TextEditor {
 	public BrowserEditor() {
 		super();
 	}
-	public BrowserCtrl getBrowserCtrl() {
+	public AbstractBrowserCtrl getBrowserCtrl() {
 		return browserCtrl;
 	}
 
@@ -47,7 +47,7 @@ public class BrowserEditor extends TextEditor {
 	
 	@Override
 	public void createPartControl(Composite parent) {
-		browserCtrl = new BrowserCtrl(this, parent);
+		browserCtrl = new AbstractBrowserCtrl(this, parent);
 		printAction  = browserCtrl.getAction("print");
 		undoAction   = browserCtrl.getUndoAction();
 		redoAction   = browserCtrl.getRedoAction();
