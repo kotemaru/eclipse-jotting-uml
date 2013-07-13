@@ -8,25 +8,19 @@
 			extensions="jul"
 			icon="icons/jul.png"
 			contributorClass="org.kotemaru.eclipse.browsereditor.ActionContributor"
-			class="org.kotemaru.eclipse.jottinguml.BrowserEditor"
+			class="org.kotemaru.eclipse.browsereditor.generic.BrowserEditor"
 			id="org.kotemaru.eclipse.jottinguml.BrowserEditor">
-			
-			<preference name="fontFamily" type="String" default="arial,sans-serif" />
-			<wizard>
-				<desc>Generic Editor</desc>
-				<initData><![CDATA[init data]]></initData>
-			</wizard>
 		</editor>
 	</extension>
 
 	<extension point="org.eclipse.core.runtime.preferences">
-		<initializer class="org.kotemaru.eclipse.jottinguml.Preference"/>
+		<initializer class="org.kotemaru.eclipse.browsereditor.generic.Preference"/>
 	</extension>
 	
 	<extension point="org.eclipse.ui.newWizards">
 		<wizard
 			category="JottingUML"
-			class="org.kotemaru.eclipse.jottinguml.NewWizard"
+			class="org.kotemaru.eclipse.browsereditor.generic.NewWizard"
 			icon="icons/jul.png"
 			id="org.kotemaru.eclipse.jottinguml.NewWizaed"
 			name="JottingUML">

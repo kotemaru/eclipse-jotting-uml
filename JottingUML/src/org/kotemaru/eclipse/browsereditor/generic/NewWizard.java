@@ -1,5 +1,9 @@
 package org.kotemaru.eclipse.browsereditor.generic;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 import org.kotemaru.eclipse.browsereditor.AbstractNewWizard;
@@ -7,39 +11,50 @@ import org.kotemaru.eclipse.browsereditor.AbstractNewWizard;
 
 public class NewWizard extends AbstractNewWizard {
 
-	private static final String TITLE = "JottingUML";
-	private static final String DESC  = "";
-	private static final String EXT   = "jul";
-	private static final String INIT_DATA =
-	"<?xml version='1.0' encoding='utf-8' ?>" +
-	"<svg xml:space='preserve' width='1' height='1' xmlns='http://www.w3.org/2000/svg'>" +
-	"<metadata id='JottingUML-data'>{}</metadata>" +
-	"</svg>";
-
+	private static byte[] initData = null;
 	
 	@Override
 	public String getTitle() {
-		return TITLE;
+		return GenericConfig.get("NewWizard.title");
 	}
 
 	@Override
 	public String getDescription() {
-		return DESC;
+		return GenericConfig.get("NewWizard.desc");
 	}
 
 	@Override
 	public String getFileExtension() {
-		return EXT;
+		return GenericConfig.get(GenericConfig.PLUGIN_EXT);
 	}
 
 	@Override
 	public byte[] getInitData() {
+		if (initData == null)  initData = makeInitDate();
+		return initData;
+	}
+
+	private byte[] makeInitDate() {
+		String fname = GenericConfig.get("NewWizard.initFile");
 		try {
-			return INIT_DATA.getBytes("utf-8");
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			InputStream in = this.getClass().getResourceAsStream(fname);
+			try {
+				ByteArrayOutputStream bout = new ByteArrayOutputStream();
+				int n=0;
+				byte[] buff = new byte[1024];
+				while ((n=in.read(buff))>0) {
+					bout.write(buff,0,n);
+				}
+				byte[] data = bout.toByteArray();
+				return data;
+			} finally {
+				in.close();
+			}
+		} catch (IOException e) {
 			return null;
 		}
 	}
 
+	
+	
 }

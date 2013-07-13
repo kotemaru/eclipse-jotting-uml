@@ -6,20 +6,17 @@ import org.kotemaru.eclipse.browsereditor.AbstractBrowserEditor;
 
 
 public class BrowserCtrl extends AbstractBrowserCtrl {
-	private static final String APP_PREFIX = "JottingUML-";
-	private static final String EDITOR_URL = "/webapps/editor.html";
-
 	public BrowserCtrl(AbstractBrowserEditor editor, Composite parent) {
 		super(editor, parent);
 	}
 
 	@Override
 	public String getAppPrefix() {
-		return APP_PREFIX;
+		return GenericConfig.get("Editor.appPrefix");
 	}
 
 	@Override
 	public String getEditorUrl() {
-		return EDITOR_URL;
+		return GenericConfig.get("Editor.url");
 	}
 }
