@@ -10,11 +10,8 @@ import org.kotemaru.eclipse.browsereditor.AbstractPreference;
 public class Preference extends AbstractPreference {
 	public static final String PREFERENCE_ = "Preference.";
 	private static Item[] items = null;
-	
-	@Override
-	public Item[] getItems() {
-		if (items != null) return items;
-		
+
+	private static Item[] makeItems() {
 		List<Item> list = new ArrayList<Item>();
 		Iterator<Entry<Object, Object>> ite 
 				= GenericConfig.getProperties().entrySet().iterator();
@@ -26,17 +23,27 @@ public class Preference extends AbstractPreference {
 				String val = (String) ent.getValue();
 				Class<?> type = String.class;
 				Object value = val;
-				if (val.startsWith("(boolean)")) {
+				
+				if (val.startsWith("Bool:")) {
 					type = Boolean.class;
-					value = Boolean.valueOf(val.substring(9).trim());
-				} else if (val.startsWith("(int)")) {
+					value = Boolean.valueOf(val.substring(5).trim());
+				} else if (val.startsWith("Int:")) {
 					type = Integer.class;
-					value = Integer.valueOf(val.substring(5).trim());
+					value = Integer.valueOf(val.substring(4).trim());
+				} else if (val.startsWith("String:")) {
+					type = String.class;
+					value = val.substring(7).trim();
 				}
 				list.add(new Item(name, type, value));
 			}
 		}
-		items = list.toArray(new Item[list.size()]);
+		return list.toArray(new Item[list.size()]);
+	}
+	
+	
+	@Override
+	public Item[] getItems() {
+		if (items == null) items = makeItems();
 		return items;
 	}
 }
