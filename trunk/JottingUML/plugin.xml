@@ -13,9 +13,9 @@
 			
 			<preference name="fontFamily" type="String" default="arial,sans-serif" />
 			<wizard>
-				<desc>Generic Editor</deac>
+				<desc>Generic Editor</desc>
 				<initData><![CDATA[init data]]></initData>
-			<wizard>
+			</wizard>
 		</editor>
 	</extension>
 
