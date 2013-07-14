@@ -9,7 +9,7 @@
 			icon="icons/jul.png"
 			contributorClass="org.kotemaru.eclipse.browsereditor.ActionContributor"
 			class="org.kotemaru.eclipse.browsereditor.generic.BrowserEditor"
-			id="org.kotemaru.eclipse.jottinguml.BrowserEditor">
+			id="org.kotemaru.eclipse.jottinguml">
 		</editor>
 	</extension>
 

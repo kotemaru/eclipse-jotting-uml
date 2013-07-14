@@ -9,7 +9,7 @@ public class BrowserEditor extends AbstractBrowserEditor {
 
 	@Override
 	public AbstractBrowserCtrl createBrowserCtrl(AbstractBrowserEditor editor, Composite parent) {
-		GenericConfig.setup(getConfigurationElement());
+		GenericConfig.configEditor(getConfigurationElement());
 		return new BrowserCtrl(editor, parent);
 	}
 }

@@ -17,7 +17,7 @@ public abstract class AbstractActivator extends AbstractUIPlugin {
 	 * PluginIDを返す。通常はActivatorのフルクラス名。
 	 * @return
 	 */
-	public abstract String getPluginId();
+	public abstract String getEditorId();
 	
 	/**
 	 * Preference実装クラスを返す。
@@ -61,6 +61,6 @@ public abstract class AbstractActivator extends AbstractUIPlugin {
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
-		return imageDescriptorFromPlugin(getDefault().getPluginId(), path);
+		return imageDescriptorFromPlugin(getDefault().getEditorId(), path);
 	}
 }
