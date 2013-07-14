@@ -62,10 +62,12 @@ function DrawerSVG(){this.initialize.apply(this, arguments)};
 		var lines = str.split("\n");
 		yy += font.acender;
 		for (var i=0; i<lines.length; i++) {
+			var width = this.textSize(font, lines[i]).w;
 	 		this.add("<text x='"+xx+"' y='"+yy+"'"
 	 			+" font-size='"+font.size+"px'"
 	  			+" font-family='"+font.family+"'"
 	 			//+" dominant-baseline='text-before-edge'" +
+	  			+" textLength='"+width+"px'"
 	 			+" >"+esc(lines[i])+"</text>");
 	 		if (isUnderLine) {
 				var m = this.dc.measureText(lines[i]);
@@ -77,17 +79,20 @@ function DrawerSVG(){this.initialize.apply(this, arguments)};
 	
 	_class.prototype.drawTextLine = function(font, str, xx, yy) {
 		if (str == "") return;
+		var width = this.textSize(font, str).w;
 		yy += font.acender;
  		this.add("<text stroke='white' stroke-width='2' x='"+xx+"' y='"+yy+"'"
  			+" font-size='"+font.size+"px'"
   			+" font-family='"+font.family+"'"
  			//+" dominant-baseline='text-before-edge'"
+  			+" textLength='"+width+"px'"
  			+" >"+esc(str)+"</text>");
  		this.add("<text x='"+xx+"' y='"+yy+"'"
  			+" font-size='"+font.size+"px'"
   			+" font-family='"+font.family+"'"
  			//+" dominant-baseline='text-before-edge"
- 			+" >"+esc(str)+"</text>");
+  			+" textLength='"+width+"px'"
+			+" >"+esc(str)+"</text>");
 	}
 	function esc(str) {
 		return str.replace(/[&]/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");

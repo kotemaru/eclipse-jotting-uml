@@ -11,8 +11,8 @@ public class Activator extends AbstractActivator {
 	private static Preference preference = new Preference();
 	
 	@Override
-	public String getPluginId() {
-		return GenericConfig.get(GenericConfig.PLUGIN_ID);
+	public String getEditorId() {
+		return GenericConfig.get("Editor.id");
 	}
 
 	@Override

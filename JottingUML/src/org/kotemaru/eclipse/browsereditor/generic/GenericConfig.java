@@ -10,10 +10,6 @@ import org.eclipse.core.runtime.IConfigurationElement;
 
 public class GenericConfig  {
 
-	public static final String PLUGIN_ID = "Plugin.id";
-	public static final String PLUGIN_EXT = "Plugin.ext";
-	public static final String PREFERENCE = "Preference";
-
 	private static Properties props = new Properties();
 	static {
 		try {
@@ -32,13 +28,11 @@ public class GenericConfig  {
 		}
 	}
 	
-	public static void setup(IConfigurationElement elem) {
+	public static void configEditor(IConfigurationElement elem) {
 		String name = elem.getAttribute("name");
 		String ext = elem.getAttribute("extensions");
-		setDefault(PLUGIN_ID, elem.getAttribute("id"));
-		setDefault(PLUGIN_EXT, ext);
-		setDefault("NewWizard.title", name);
-		setDefault("NewWizard.initFile", "/webapps/init."+ext);
+		setDefault("Editor.id", elem.getAttribute("id"));
+		setDefault("Editor.ext", ext);
 		setDefault("Editor.appPrefix", name+"-");
 		setDefault("Editor.url", "/webapps/editor.html");
 	}

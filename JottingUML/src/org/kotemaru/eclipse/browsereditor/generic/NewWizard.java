@@ -1,10 +1,8 @@
 package org.kotemaru.eclipse.browsereditor.generic;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 
 import org.kotemaru.eclipse.browsereditor.AbstractNewWizard;
 
@@ -25,7 +23,7 @@ public class NewWizard extends AbstractNewWizard {
 
 	@Override
 	public String getFileExtension() {
-		return GenericConfig.get(GenericConfig.PLUGIN_EXT);
+		return GenericConfig.get("NewWizard.ext");
 	}
 
 	@Override
