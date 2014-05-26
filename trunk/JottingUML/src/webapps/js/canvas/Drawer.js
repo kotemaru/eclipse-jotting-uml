@@ -176,7 +176,7 @@ function Drawer(){this.initialize.apply(this, arguments)};
 				dc.strokeStyle = dc.createPattern($("#meshImg")[0], 'repeat');
 			}
 		} else {
-			if (dc.setLineDash) dc.setLineDash(null);
+			if (dc.setLineDash) dc.setLineDash([1,0]);
 			dc.mozDash = null;
 			dc.strokeStyle = "black";
 		}
